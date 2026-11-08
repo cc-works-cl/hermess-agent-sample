@@ -1,0 +1,14 @@
+.DS_Store
+.env
+.env.*
+*.pem
+node_modules/
+cdk.out/
+
+# Terraform（terraform-conoha/）
+.terraform/
+*.tfstate*
+*.tfplan
+*.tfvars
+!*.tfvars.example
+crash.log

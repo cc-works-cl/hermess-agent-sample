@@ -1,0 +1,27 @@
+# cp terraform.tfvars.example terraform.tfvars で複製して値を埋める。
+# terraform.tfvars は .gitignore 済み。コミットしないこと。
+# ConoHa の API 認証情報（user_id / password / tenant_id）はここに書かず、CONOHAVPS_* 環境変数で渡す。
+
+# lookup-ids.sh で調べた UUID
+flavor_id = "00000000-0000-0000-0000-000000000000" # 例: g2l-t-c4m4（4 vCPU / 4GB）の ID
+image_id  = "00000000-0000-0000-0000-000000000000" # Ubuntu 24.04 のイメージ ID
+
+# コンソールから入るための root パスワード（9〜70 文字、大文字・小文字・数字・記号を含む）
+admin_pass = "CHANGE-ME-Str0ng!pass"
+
+# Tailscale の auth key。1 回限り・事前承認・tag:hermes 付き・有効期限 1 日を推奨
+# 環境変数 TF_VAR_tailscale_auth_key で渡してもよい（そのほうがファイルに残らない）
+tailscale_auth_key = "tskey-auth-XXXXXXXXXXXX-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
+
+# 以下は既定値のままでよい
+# region              = "c3j1"
+# identity_endpoint   = "https://identity.c3j1.conoha.io/v3"
+# name_prefix         = "hermes"
+# instance_name_tag   = "hermes-agent"
+# boot_volume_size    = 100
+# boot_volume_type    = "c3j1-ds02-boot"
+# power_state         = "ACTIVE"
+# claude_code_version = "stable"
+# tailscale_hostname  = "hermes-agent"
+# tailscale_tags      = ["tag:hermes"]
+# disable_openssh     = true
